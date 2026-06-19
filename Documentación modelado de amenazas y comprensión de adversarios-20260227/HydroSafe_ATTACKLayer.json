@@ -1,0 +1,125 @@
+{
+	"name": "layer",
+	"versions": {
+		"attack": "18",
+		"navigator": "5.3.0",
+		"layer": "4.5"
+	},
+	"domain": "ics-attack",
+	"description": "",
+	"filters": {
+		"platforms": [
+			"None"
+		]
+	},
+	"sorting": 0,
+	"layout": {
+		"layout": "side",
+		"aggregateFunction": "average",
+		"showID": false,
+		"showName": true,
+		"showAggregateScores": false,
+		"countUnscored": false,
+		"expandedSubtechniques": "none"
+	},
+	"hideDisabled": false,
+	"techniques": [
+		{
+			"techniqueID": "T0816",
+			"tactic": "inhibit-response-function",
+			"color": "",
+			"comment": "Un atacante lanza un ataque de denegación de servicio contra el sistema de Autenticación de HydroSafe ubicado en la DMZ, saturando el servidor hasta dejarlo inoperativo. Esto impide el acceso de operadores y técnicos a los sistemas de control, dejando el Tratamiento de Agua sin supervisión.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0842",
+			"tactic": "discovery",
+			"color": "",
+			"comment": "Un atacante intercepta el tráfico de red entre el proceso de Autenticación y la BD Clientes de HydroSafe, capturando datos confidenciales como credenciales de acceso y datos personales de clientes mediante técnicas de sniffing en la red.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0832",
+			"tactic": "impact",
+			"color": "",
+			"comment": "Un atacante manipula las lecturas de los sensores almacenadas en la BD Sensores de HydroSafe, alterando los valores de cloro y otros químicos para ocultar niveles peligrosos en el agua distribuida a ciudadanos y empresas embotelladoras.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0871",
+			"tactic": "execution",
+			"color": "",
+			"comment": "La ausencia de registros de auditoría en la BD Clientes de HydroSafe permite que un atacante ejecute acciones maliciosas a través de la API sin dejar rastro, siendo imposible atribuir modificaciones en los datos de consumo.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0866",
+			"tactic": "initial-access",
+			"color": "",
+			"comment": "Un atacante explota el acceso remoto del Técnico de Campo en HydroSafe, aprovechando la ausencia de MFA y VPN para suplantar su identidad y acceder al sistema SCADA.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0866",
+			"tactic": "lateral-movement",
+			"color": "",
+			"comment": "Un atacante explota el acceso remoto del Técnico de Campo en HydroSafe, aprovechando la ausencia de MFA y VPN para suplantar su identidad y acceder al sistema SCADA.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0890",
+			"tactic": "privilege-escalation",
+			"color": "",
+			"comment": "El proceso de Monitorización de HydroSafe se ejecuta con privilegios elevados sin aplicar el principio de mínimo privilegio, permitiendo que un atacante que comprometa este proceso escale privilegios y tome control directo sobre las órdenes enviadas a los PLCs del Tratamiento de Agua.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T0813",
+			"tactic": "impact",
+			"color": "",
+			"comment": "Un atacante interrumpe el sistema de control de PLCs en HydroSafe, dejando sin supervisión las válvulas y bombas del proceso de Tratamiento de Agua, impidiendo la dosificación correcta de químicos como el cloro.",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": false
+		}
+	],
+	"gradient": {
+		"colors": [
+			"#ff6666ff",
+			"#ffe766ff",
+			"#8ec843ff"
+		],
+		"minValue": 0,
+		"maxValue": 100
+	},
+	"legendItems": [],
+	"metadata": [],
+	"links": [],
+	"showTacticRowBackground": false,
+	"tacticRowBackground": "#dddddd",
+	"selectTechniquesAcrossTactics": true,
+	"selectSubtechniquesWithParent": false,
+	"selectVisibleTechniques": false
+}
